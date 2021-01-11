@@ -1,6 +1,7 @@
 # Demo Weather App
 
 **Technologies**:
+- [x] TypeScript
 - [x] ReactJS
 - [x] Redux
 - [x] Redux Thunk
