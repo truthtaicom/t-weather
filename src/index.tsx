@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './pages';
+import { ApplicationInitialState } from './redux/rootReducer';
+import configureStore from './redux/store';
 import reportWebVitals from './reportWebVitals';
+import { Store } from "redux";
+import { Provider } from "react-redux";
+import createServer from './mockServer'
+import './i18n';
+
+const store: Store = configureStore(ApplicationInitialState);
+createServer()
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
